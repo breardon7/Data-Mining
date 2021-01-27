@@ -47,12 +47,11 @@ rand_perm(list)
 # Class_Ex4:
 # Write a program to convert a tuple to a string.
 # ----------------------------------------------------------------
-tuple = ('Hello','goodbye')
+tuple = ('Hello','world!')
 
 def tup_to_list(x):
-    for i in x:
-        i = [i]
-        print(x, type(x))
+    y = ', '.join(x)
+    print(y)
 
 tup_to_list(tuple)
 
@@ -74,7 +73,16 @@ third_tup(tup)
 # Class_Ex6:
 # Write a program to check if an element exists in a tuple or not.
 # ----------------------------------------------------------------
+tup2 = ('a','b','c','d')
 
+def tup_exist(x, y):
+    if y in x:
+        print(str(y) + ' exists in: ' + str(x))
+    else:
+        print(str(y) + ' DOES NOT exist in: ' + str(x))
+
+tup_exist(tup2, 1)
+tup_exist(tup2, 'a')
 
 
 
@@ -82,8 +90,17 @@ third_tup(tup)
 # Class_Ex7:
 # Write a  program to check a list is empty or not.
 # ----------------------------------------------------------------
+list2 = [1,2,3,4]
+list3 = []
 
+def is_list_empty(x):
+    if x == []:
+        print('List is empty.')
+    else:
+        print('List is not empty.')
 
+is_list_empty(list2)
+is_list_empty(list3)
 
 
 # =================================================================
@@ -91,7 +108,15 @@ third_tup(tup)
 # Write a program to generate a 4*5*3 3D array that each element is O.
 # ----------------------------------------------------------------
 
+print('Input element value for array:')
+input = eval(input())
 
+def create_3d_array(x):
+    y = [[x,x,x]]
+    z = [y*5]
+    a = z*4
+    print(a)
+create_3d_array(input)
 
 
 
