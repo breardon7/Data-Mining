@@ -80,16 +80,13 @@ for i in range(0,h):
 print('Input an integer to find all prime numbers up to and including that integer: ')
 x = eval(input())
 
-for i in range(1, x+1):
-    if i == 1:
-        print(i)
-    elif i > 1:
-        for j in range(2, i):
-            if i % j == 0:
-                break
-            else:
-                print(i)
-                break
+for i in range(1, x + 1):
+   if i > 1:
+       for j in range(2, i):
+           if (i % j) == 0:
+               break
+       else:
+           print(i)
 
 
 
