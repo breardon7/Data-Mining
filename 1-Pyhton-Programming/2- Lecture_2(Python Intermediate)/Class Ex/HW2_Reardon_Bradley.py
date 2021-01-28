@@ -32,14 +32,24 @@ dice_roll()
 # Class_Ex3: 
 # Randomly Permuting a List
 # ----------------------------------------------------------------
-list = ['a','b','c']
-def rand_perm(x):
-    r, s, t = randrange(0,len(x)), randrange(0,len(x)), randrange(0,len(x))
-    print(x[r]+x[s]+x[t])
+from random import randrange
 
-rand_perm(list)
+l = ['a','b','c','d']
 
+def rand_perms(x):
+    for i in range(len(x)):
+        y = randrange(0, len(x))
 
+        print(x[y], end=', ')
+
+rand_perms(l)
+
+from random import shuffle
+l = ['a','b','c','d']
+def shuffle_list(x):
+    shuffle(x)
+    print(x)
+shuffle_list(l)
 
 
 
@@ -108,15 +118,12 @@ is_list_empty(list3)
 # Write a program to generate a 4*5*3 3D array that each element is O.
 # ----------------------------------------------------------------
 
-print('Input element value for array:')
-input = eval(input())
-
-def create_3d_array(x):
-    y = [[x,x,x]]
+def create_3d_array():
+    y = [[0,0,0]]
     z = [y*5]
     a = z*4
     print(a)
-create_3d_array(input)
+create_3d_array()
 
 
 
