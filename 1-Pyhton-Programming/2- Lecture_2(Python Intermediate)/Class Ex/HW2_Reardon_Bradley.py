@@ -218,9 +218,22 @@ common_element(even,mix)
 # E.6:
 # Work on a script to merge or join two dictionaries.
 # ----------------------------------------------------------------
+dict1 = {'color': 'blue'}
+dict2 = {'number': 'one'}
+
+def join_dict(x,y):
+    z = {**x, **y}
+    print(z)
+
+join_dict(dict1, dict2)
 
 
 # =================================================================
 # E.7:
 # Work on a script or a program to map two lists into a dictionary.
 # ----------------------------------------------------------------
+ld1 = ['animal']
+ld2 = ['elephant']
+
+def lists_to_dict(key, value):
+    
