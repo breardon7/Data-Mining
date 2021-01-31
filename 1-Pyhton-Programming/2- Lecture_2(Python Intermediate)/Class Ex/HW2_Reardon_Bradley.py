@@ -232,8 +232,13 @@ join_dict(dict1, dict2)
 # E.7:
 # Work on a script or a program to map two lists into a dictionary.
 # ----------------------------------------------------------------
-ld1 = ['animal']
-ld2 = ['elephant']
+ld1 = ['animal', 'color', 'fruit']
+ld2 = ['elephant', 'black', 'banana']
 
 def lists_to_dict(key, value):
-    
+    z = {}
+    for i in key:
+        z += str(i) + ':'
+    print(z)
+
+lists_to_dict(ld1,ld2)

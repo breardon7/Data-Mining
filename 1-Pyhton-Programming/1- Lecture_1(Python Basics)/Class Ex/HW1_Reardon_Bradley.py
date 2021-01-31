@@ -66,7 +66,7 @@ print("Input an integer for the triangular tree's height: ")
 h = eval(input())
 star = '* '
 space = ' '
-for i in range(0,h):
+for i in range(0,h+1):
    print(space*((h-i))+star*i)
 
 
