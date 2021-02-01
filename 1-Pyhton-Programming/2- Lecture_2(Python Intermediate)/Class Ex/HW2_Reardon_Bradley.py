@@ -32,17 +32,6 @@ dice_roll()
 # Class_Ex3: 
 # Randomly Permuting a List
 # ----------------------------------------------------------------
-from random import randrange
-
-l = ['a','b','c','d']
-
-def rand_perms(x):
-    for i in range(len(x)):
-        y = randrange(0, len(x))
-
-        print(x[y], end=', ')
-
-rand_perms(l)
 
 from random import shuffle
 l = ['a','b','c','d']
@@ -140,6 +129,27 @@ create_3d_array()
 # What are the pro and cons of this method?
 # ----------------------------------------------------------------
 
+array = [10, 22, 30, 45, 20]
+
+
+def find_target(array, n, target):
+    n = len(array)
+    min = 0
+    max = n - 1
+    guess = int((max + min) / 2)
+    if array[guess] == target:
+        print(guess)
+    elif array[guess] < target:
+        min = guess + 1
+    elif array[guess] > target:
+        max = guess - 1
+
+
+find_target(array, len(array), 30)
+
+
+
+
 
 # =================================================================
 # E.2:
@@ -236,9 +246,7 @@ ld1 = ['animal', 'color', 'fruit']
 ld2 = ['elephant', 'black', 'banana']
 
 def lists_to_dict(key, value):
-    z = {}
-    for i in key:
-        z += str(i) + ':'
-    print(z)
+    dict = {key[i]: value[i] for i in range(len(key))}
+    print(dict)
 
-lists_to_dict(ld1,ld2)
+lists_to_dict(ld1, ld2)
