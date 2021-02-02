@@ -4,12 +4,10 @@
 # ----------------------------------------------------------------
 print('Enter a given number of seconds to convert seconds to hours and minutes:')
 s = eval(input())
-hours = s/3600
-mins = s/60
-secs = s
-print('Hours = ' + str(hours))
-print('Minutes = ' + str(mins))
-print('Seconds = ' + str(secs))
+hours = int(s/3600)
+mins = int((s - 3600*hours)/60)
+secs = int(s - 3600*hours - 60*mins)
+print(str(s) + ' seconds is equal to ' + str(hours) +' hours, ' + str(mins) + ' mins, and ' + str(secs) + ' seconds.')
 
 
 

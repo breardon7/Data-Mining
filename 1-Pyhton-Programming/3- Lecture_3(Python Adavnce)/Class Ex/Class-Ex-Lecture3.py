@@ -5,10 +5,26 @@
 # to stop the clock (call the stop method), and then read the elapsed time
 # (use the result of the elapsed method).
 # ----------------------------------------------------------------
+class stopwatch:
+    def __init__(self, start, stop, reset)
+    self.start = start
+    self.stop = stop
+    self.reset = reset
 
 
+def start(stopwatch):
+    from time import clock
+    start_time = clock(stopwatch)
+
+def stop(stopwatch):
+    from time import clock
+    stop_time = clock(stopwatch)
+
+class counting_stopwatch:
+    def __init__
 
 
+# use sleep to simulate the program to check it is working correctly
 
 
 

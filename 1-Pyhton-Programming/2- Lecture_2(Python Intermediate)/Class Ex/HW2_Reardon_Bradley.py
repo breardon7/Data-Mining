@@ -129,6 +129,10 @@ create_3d_array()
 # What are the pro and cons of this method?
 # ----------------------------------------------------------------
 
+
+# hint from prof.: binary search
+
+
 array = [10, 22, 30, 45, 20]
 
 
@@ -145,7 +149,17 @@ def find_target(array, n, target):
         max = guess - 1
 
 
+
+
 find_target(array, len(array), 30)
+
+# Explanation:
+
+# Pros: The program will continuously loop through the steps until the target is found.
+
+# Cons:
+# The prorgam will not return an answer unless the input target value is also a value contained within the array.
+# The array must be ordered from least to greatest for the program to properly search for the target.
 
 
 
