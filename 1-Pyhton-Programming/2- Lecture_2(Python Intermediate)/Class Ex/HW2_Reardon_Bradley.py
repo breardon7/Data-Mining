@@ -133,7 +133,7 @@ create_3d_array()
 # hint from prof.: binary search
 
 
-array = [10, 22, 30, 45, 20]
+array = [10, 22, 30, 45]
 
 
 def find_target(array, n, target):
@@ -141,24 +141,24 @@ def find_target(array, n, target):
     min = 0
     max = n - 1
     guess = int((max + min) / 2)
-    if array[guess] == target:
-        print(guess)
-    elif array[guess] < target:
-        min = guess + 1
-    elif array[guess] > target:
-        max = guess - 1
+    while guess in range(0, n):
+        if array[guess] == target:
+            print('The target is indexed at: ' + str(guess))
+            break
+        elif array[guess] < target:
+            guess += 1
+        elif array[guess] > target:
+            guess -= 1
 
 
-
-
-find_target(array, len(array), 30)
+find_target(array, len(array), 45)
 
 # Explanation:
 
 # Pros: The program will continuously loop through the steps until the target is found.
 
 # Cons:
-# The prorgam will not return an answer unless the input target value is also a value contained within the array.
+# The program will not return an answer unless the input target value is also a value contained within the array.
 # The array must be ordered from least to greatest for the program to properly search for the target.
 
 
@@ -192,11 +192,11 @@ def longest_word(x):
         for j in i:
             count +=1
         lengths += [count]
-        max = lengths[0]
+        maxi = lengths[0]
         for k in lengths:
-            if k > max:
-                max = k
-    print(max)
+            if k > maxi:
+                maxi = k
+    print(maxi)
 
 longest_word(long_list)
 
@@ -204,21 +204,15 @@ longest_word(long_list)
 # E.4:
 # Make up your own list and work on a program to get the smallest number from the list
 # ----------------------------------------------------------------
-long_list = ['hello', 'goodbye', 'brad', 'cat']
-def shortest_word(x):
-    lengths = []
-    for i in x:
-        count = 0
-        for j in i:
-            count +=1
-        lengths += [count]
-        min = lengths[0]
-        for k in lengths:
-            if k < min:
-                min = k
-    print(min)
+num_list = [1, 51, 2, 68, -5]
+def lowest(x):
+    mini = x[0]
+    for i in range(len(x)):
+        if x[i] < mini:
+            mini = x[i]
+    print(mini)
 
-shortest_word(long_list)
+lowest(num_list)
 
 # =================================================================
 # E.5:
