@@ -6,18 +6,16 @@
 # (use the result of the elapsed method).
 # ----------------------------------------------------------------
 class stopwatch:
-    def __init__(self, start, stop, reset)
-    self.start = start
-    self.stop = stop
-    self.reset = reset
-
-
-def start(stopwatch):
+    def __init__(self, start, stop, reset):
+        self.start = start
+        self.stop = stop
+        self.reset = reset
+    def start(stopwatch):
     from time import clock
-    start_time = clock(stopwatch)
+        return
 
 def stop(stopwatch):
-    from time import clock
+        from time import clock
     stop_time = clock(stopwatch)
 
 class counting_stopwatch:
@@ -38,10 +36,11 @@ class pow:
         self.x = x
         self.n = n
 
-    def pow(self):
-        return x**n
+    def power(self):
+        return self.x**self.n
 
-n = self(5, 10)
+n = pow(5, 3)
+n.power()
 
 
 
@@ -79,17 +78,21 @@ area.calc()
 # ----------------------------------------------------------------
 
 class Circle:
-    def __innit__(self, radius):
+    def __init__(self, radius):
         self.r = radius
-        from math import pi
-        def area:
-            return self.r**2 * pi
-        def perimeter:
-            return 2 * pi * self.r
 
-circle_radius = Circle(3)
-circle_radius.area()
-circle_radius.perimeter()
+    def area(self):
+        return self.r ** 2 * 3.14159265359
+
+    def perimeter(self):
+        return 2 * 3.14159265359 * self.r
+
+
+circ = Circle(5)
+area = circ.area()
+perimeter = circ.perimeter()
+
+print('Area: ' + str(area),'Perimeter: ' + str(perimeter))
 
 
 
@@ -100,9 +103,19 @@ circle_radius.perimeter()
 # you use built in function in python explain the methods and how this methods are working.
 # ----------------------------------------------------------------
 
+array = [1,2,2,3,3,3,4,5,5,5,5,6,6,6,1,'f','f']
 
+def duplicates(x):
+    z = []
+    for i in range(len(x)):
+        if x.count(x[i]) > 1:
+            if x[i] not in z:
+                z += [x[i]]
+    print(z)
 
+duplicates(array)
 
+# The count() method returns an integer representing the number of times an input value exists in an object.
 
 # =================================================================
 # E.2:
@@ -110,7 +123,11 @@ circle_radius.perimeter()
 # use built in function in python explain the methods and how this methods are working.
 # ----------------------------------------------------------------
 
-
+def divis_by_five_or_two():
+    for i in range(1,1000):
+        if i % 2 == 0 and i % 5 == 0:
+            print(i)
+divis_by_five_or_two()
 
 
 
@@ -120,6 +137,21 @@ circle_radius.perimeter()
 # Write a Python class to convert a roman numeral to an integer. Hint: (Use the following symbols
 # and numerals Wiki )
 # ----------------------------------------------------------------
+
+class roman:
+    def rom_int(self, rom_num):
+        dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
+        z = 0
+        for i in range(len(rom_num)):
+            if i > 0 and dict[rom_num[i]] > dict[rom_num[i-1]]:
+                z += dict[rom_num[i]] - 2*dict[rom_num[i-1]]
+            else:
+                z += dict[rom_num[i]]
+        print(z)
+
+roman().rom_int('MMMCMLXXXVI')
+
+
 
 
 
@@ -133,6 +165,7 @@ circle_radius.perimeter()
 # Output : [[-10, 3, 7], [-6, -4, 10]]
 # ----------------------------------------------------------------
 
+class ten_sum:
 
 
 
