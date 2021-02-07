@@ -139,17 +139,20 @@ divis_by_five_or_two()
 # ----------------------------------------------------------------
 
 class roman:
-    def rom_int(self, rom_num):
+    def __init__(self, num):
+        self.n = num
+
+    def rom_int(self):
         dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
         z = 0
-        for i in range(len(rom_num)):
-            if i > 0 and dict[rom_num[i]] > dict[rom_num[i-1]]:
-                z += dict[rom_num[i]] - 2*dict[rom_num[i-1]]
+        for i in range(len(self.n)):
+            if i > 0 and dict[self.n[i]] > dict[self.n[i-1]]:
+                z += dict[self.n[i]] - 2*dict[self.n[i-1]]
             else:
-                z += dict[rom_num[i]]
+                z += dict[self.n[i]]
         print(z)
 
-roman().rom_int('MMMCMLXXXVI')
+rom = rom_int('XXXVI')
 
 
 
@@ -165,7 +168,18 @@ roman().rom_int('MMMCMLXXXVI')
 # Output : [[-10, 3, 7], [-6, -4, 10]]
 # ----------------------------------------------------------------
 
-class ten_sum:
+input = [-20, -10, -6, -4, 3, 4, 7, 10]
+
+def loop(x):
+    y = []
+    for i in range(len(x)):
+       for j in range(i, len(x)):
+          for k in range(j, len(x)):
+             if x[i] + x[j] + x[k] == 0 and x[i] != x[j] and x[i] != x[k] and x[j] != x[k]:
+                 y += [[x[i], x[j], x[k]]]
+    print(y)
+loop(input)
+
 
 
 
