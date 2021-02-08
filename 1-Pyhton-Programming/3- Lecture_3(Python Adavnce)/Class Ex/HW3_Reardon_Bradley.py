@@ -6,7 +6,7 @@
 # (use the result of the elapsed method).
 # ----------------------------------------------------------------
 
-from time import sleep
+import time
 
 
 class stopwatch:
@@ -18,17 +18,15 @@ class stopwatch:
     def stop():
         return time.time()
 
-    def elapsed():
-        return stopwatch.start() - stopwatch.stop()
+    def elapsed(stop, start):
+        return stop - start
 
 
 start = stopwatch.start()
 time.sleep(5)
 stop = stopwatch.stop()
-elapsed = stop - start
-elapsed
-
-# use sleep to simulate the program to check it is working correctly
+elapsed = stopwatch.elapsed(stop, start)
+print('Time elapsed: ' + str(int(elapsed)) + ' seconds')
 
 
 
@@ -46,7 +44,7 @@ class pow:
         return self.x**self.n
 
 n = pow(5, 3)
-n.power()
+print(n.power())
 
 
 
@@ -70,7 +68,7 @@ class area_of_rect:
         return self.l * self.w
 
 area = area_of_rect(5, 10)
-area.calc()
+print('The area of the rectangle is: ' + str(area.calc()))
 
 
 
@@ -117,9 +115,9 @@ def duplicates(x):
         if x.count(x[i]) > 1:
             if x[i] not in z:
                 z += [x[i]]
-    print(z)
+    return z
 
-duplicates(array)
+print(duplicates(array))
 
 # The count() method returns an integer representing the number of times an input value exists in an object.
 
@@ -131,7 +129,7 @@ duplicates(array)
 
 def divis_by_five_or_two():
     for i in range(1,1000):
-        if i % 2 == 0 and i % 5 == 0:
+        if i % 2 == 0 or i % 5 == 0:
             print(i)
 divis_by_five_or_two()
 
@@ -156,15 +154,10 @@ class roman:
                 z += dict[self.n[i]] - 2*dict[self.n[i-1]]
             else:
                 z += dict[self.n[i]]
-        print(z)
+        print('The Roman Numeral as an integer is: ' + str(z))
 
-rom = rom_int('XXXVI')
-
-
-
-
-
-
+rom = roman('CCXXXVI')
+rom.rom_int()
 
 
 # =================================================================
