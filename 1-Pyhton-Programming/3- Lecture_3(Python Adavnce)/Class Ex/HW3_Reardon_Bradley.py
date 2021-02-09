@@ -129,7 +129,7 @@ print(duplicates(array))
 
 def divis_by_five_or_two():
     for i in range(1,1000):
-        if i % 2 == 0 or i % 5 == 0:
+        if i % 2 == 0 and i % 5 == 0:
             print(i)
 divis_by_five_or_two()
 
@@ -147,17 +147,17 @@ class roman:
         self.n = num
 
     def rom_int(self):
-        dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
         z = 0
+        dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
         for i in range(len(self.n)):
-            if i > 0 and dict[self.n[i]] > dict[self.n[i-1]]:
-                z += dict[self.n[i]] - 2*dict[self.n[i-1]]
+            if i < (len(self.n)-1) and dict[self.n[i]] < dict[self.n[i+1]]:
+                z += dict[self.n[i+1]] - dict[self.n[i]] - dict[self.n[i+1]]
             else:
                 z += dict[self.n[i]]
-        print('The Roman Numeral as an integer is: ' + str(z))
+        return z
 
-rom = roman('CCXXXVI')
-rom.rom_int()
+rom = roman('MMMCMLXXXVI')
+print('The Roman Numeral as an integer is: ' + str(rom.rom_int()))
 
 
 # =================================================================
