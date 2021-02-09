@@ -151,12 +151,12 @@ class roman:
         dict = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
         for i in range(len(self.n)):
             if i < (len(self.n)-1) and dict[self.n[i]] < dict[self.n[i+1]]:
-                z += dict[self.n[i+1]] - dict[self.n[i]] - dict[self.n[i+1]]
+                z -= dict[self.n[i]]
             else:
                 z += dict[self.n[i]]
         return z
 
-rom = roman('MMMCMLXXXVI')
+rom = roman('MMCDXXI')
 print('The Roman Numeral as an integer is: ' + str(rom.rom_int()))
 
 
