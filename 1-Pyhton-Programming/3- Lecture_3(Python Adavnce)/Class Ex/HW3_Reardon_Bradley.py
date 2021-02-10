@@ -27,6 +27,10 @@ time.sleep(5)
 stop = stopwatch.stop()
 elapsed = stopwatch.elapsed(stop, start)
 print('Time elapsed: ' + str(int(elapsed)) + ' seconds')
+time.sleep(5)
+stop = stopwatch.stop()
+elapsed = stopwatch.elapsed(stop, start)
+print('Time elapsed: ' + str(int(elapsed)) + ' seconds')
 
 
 
@@ -169,15 +173,16 @@ print('The Roman Numeral as an integer is: ' + str(rom.rom_int()))
 
 input = [-20, -10, -6, -4, 3, 4, 7, 10]
 
-def loop(x):
-    y = []
-    for i in range(len(x)):
-       for j in range(i, len(x)):
-          for k in range(j, len(x)):
-             if x[i] + x[j] + x[k] == 0 and x[i] != x[j] and x[i] != x[k] and x[j] != x[k]:
-                 y += [[x[i], x[j], x[k]]]
-    print(y)
-loop(input)
+class sum_zero:
+    def loop(x):
+        y = []
+        for i in range(len(x)):
+           for j in range(i, len(x)):
+              for k in range(j, len(x)):
+                 if x[i] + x[j] + x[k] == 0 and x[i] != x[j] and x[i] != x[k] and x[j] != x[k]:
+                     y += [[x[i], x[j], x[k]]]
+        return y
+print(sum_zero.loop(input))
 
 
 
