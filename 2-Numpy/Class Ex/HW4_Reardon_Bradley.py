@@ -172,7 +172,12 @@ print(np.setdiff1d(array1, array2))
 # Sample array: [1, 2, 3, 4, 5]
 # ----------------------------------------------------------------
 
-def repeat_array()
+def repeat_array(x):
+    y = []
+    for i in range(x):
+        y+= [i]
+    return np.array(y)
+print(repeat_array(10))
 
 
 
@@ -183,7 +188,16 @@ def repeat_array()
 # that are bigger than 6 in a given array.
 # ----------------------------------------------------------------
 
+array6 = np.arange(0,30,5)
 
+def above_six(x):
+    y = []
+    for i in range(len(x)):
+        if x[i] > 6:
+            y += [{i: x[i]}]
+    return y
+
+print(above_six(array6))
 
 
 
