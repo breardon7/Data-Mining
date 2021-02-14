@@ -3,8 +3,21 @@
 # Write a NumPy code to test if none of the elements of a given
 # array is zero.
 # ----------------------------------------------------------------
+import numpy as np
+
+array_0 = np.arange(0, 10, 2)
+array_no_0 = np.arange(1, 10, 2)
 
 
+def contains_zero(x):
+    if np.any(x == 0):
+        print('Array contains zero values.')
+    else:
+        print('Array contains no zero values.')
+
+
+contains_zero(array_0)
+contains_zero(array_no_0)
 
 
 
@@ -15,8 +28,21 @@
 # array is non-zero.
 # ----------------------------------------------------------------
 
+zero_array = np.zeros((3, 3))
+one_array = np.ones((3, 4))
 
 
+def contains_no_zero(x):
+    if np.any(x != 0):
+        print('Array contains non-zero values.')
+    else:
+        print('Array does not contain non-zero values.')
+
+
+contains_no_zero(array_0)
+contains_no_zero(array_no_0)
+contains_no_zero(zero_array)
+contains_no_zero(one_array)
 
 
 
@@ -25,8 +51,12 @@
 # Write a NumPy code to test if two arrays are element-wise equal
 # within a tolerance.
 # ----------------------------------------------------------------
+x = np.zeros((3,4))
+y = np.ones((3,4))
+z = np.ones((3,4))
 
-
+print(np.allclose(x,y))
+print(np.allclose(y,z))
 
 
 
@@ -37,6 +67,9 @@
 # by the array.
 # ----------------------------------------------------------------
 
+size = np.array([1, 8, 130, 10990005])
+
+print('Array size: ', size.nbytes)
 
 
 
@@ -57,7 +90,18 @@
 # Write a NumPy code to reverse (flip) an array (first element becomes last).
 # ----------------------------------------------------------------
 
+import numpy as np
 
+array_rev = np.array([1, 2, 3, 4])
+
+def rev_array(x):
+    y = []
+    for i in reversed(x - 1):
+        y += [x[i]]
+    return np.array(y)
+
+
+print(rev_array(array_rev))
 
 
 
@@ -67,9 +111,12 @@
 # Write a NumPy code to create a matrix with 1 on the border and 0 inside.
 # ----------------------------------------------------------------
 
-
-
-
+one_border = np.zeros((4,4))
+one_border[0,:] = 1
+one_border[-1,:] = 1
+one_border[:,0] = 1
+one_border[:,-1] = 1
+print(one_border)
 
 
 
@@ -79,7 +126,12 @@
 # matrix of one.
 # ----------------------------------------------------------------
 
-
+zero_border = np.ones((4,4))
+zero_border[0,:] = 0
+zero_border[-1,:] = 0
+zero_border[:,0] = 0
+zero_border[:,-1] = 0
+print(zero_border)
 
 
 
@@ -90,7 +142,10 @@
 # Write a NumPy code to append values to the end of an array.
 # ----------------------------------------------------------------
 
-
+x = np.zeros((3,4,5))
+y = [1,2,3,4]
+z = np.append(x,y)
+print(z)
 
 
 
@@ -102,8 +157,10 @@
 # The set difference will return the sorted, unique values in array1
 # that are not in array2.
 # ----------------------------------------------------------------
+array1 = np.arange(1,30,2)
+array2 = np.arange(1,30,3)
 
-
+print(np.setdiff1d(array1, array2))
 
 
 
@@ -115,7 +172,7 @@
 # Sample array: [1, 2, 3, 4, 5]
 # ----------------------------------------------------------------
 
-
+def repeat_array()
 
 
 
