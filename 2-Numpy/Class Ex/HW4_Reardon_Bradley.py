@@ -81,7 +81,9 @@ print('Array size: ', size.nbytes)
 # 10 to 20 and print all values ​​except the first and last.
 # ----------------------------------------------------------------
 
-
+ten_twenty = np.random.randint(10,21, size=5)
+print(ten_twenty)
+print(ten_twenty[1:-1])
 
 
 
@@ -233,9 +235,9 @@ print(floor, ceiling, trunc)
 # Singular Value Decomposition.
 # ----------------------------------------------------------------
 
-svd = np.random.randint(1, 40, size = 25)
-svd2 = svd.reshape(5,5)
-print(np.linalg.svd(svd2))
+square = np.random.randint(1, 10, size = 4)
+sq2 = square.reshape(2,2)
+print(np.linalg.svd(sq2))
 
 
 
@@ -247,7 +249,7 @@ print(np.linalg.svd(svd2))
 # of a given square array.
 # ----------------------------------------------------------------
 
-
+print(np.linalg.eig(sq2))
 
 
 # =================================================================
@@ -255,7 +257,9 @@ print(np.linalg.svd(svd2))
 # Write a NumPy code to get the dates of yesterday, today and tomorrow.
 # ----------------------------------------------------------------
 
-
+print('Yesterday: ' + str(np.datetime64('today') + np.timedelta64(-1, 'D')))
+print('Today: ' + str(np.datetime64('today')))
+print('Tomorrow: ' + str(np.datetime64('today') + np.timedelta64(1, 'D')))
 
 
 
