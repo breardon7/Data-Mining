@@ -207,9 +207,12 @@ print(above_six(array6))
 # specified array.
 # ----------------------------------------------------------------
 
-
-
-
+D = np.array([1,2,3,4])
+twoD = D.reshape((2,2))
+Dflat = twoD.reshape((-1))
+#I understand that I just reversed the initial reshape, but I
+# wrote this solution as if the two-dimensional array was provided.
+print(Dflat[3])
 
 
 # =================================================================
@@ -218,8 +221,11 @@ print(above_six(array6))
 # values of the elements of an numpy array.
 # ----------------------------------------------------------------
 
-
-
+fct = 4 * np.random.randn(1,5) + 4
+floor = np.floor(fct)
+ceiling = np.ceil(fct)
+trunc = np.trunc(fct)
+print(floor, ceiling, trunc)
 
 # =================================================================
 # Class_Ex15:
@@ -227,7 +233,9 @@ print(above_six(array6))
 # Singular Value Decomposition.
 # ----------------------------------------------------------------
 
-
+svd = np.random.randint(1, 40, size = 25)
+svd2 = svd.reshape(5,5)
+print(np.linalg.svd(svd2))
 
 
 
