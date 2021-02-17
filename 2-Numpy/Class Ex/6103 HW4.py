@@ -7,8 +7,15 @@
 # iii. plot the following vector and check your min and max value that you find in section i.
 # ----------------------------------------------------------------
 import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+
+hundred = np.random.randint(0,100,200) * 100
+largest = hundred[0]
+smallest = hundred[-1]
 
 
+plt.quiver([smallest, largest], 1, 1)
 
 # =================================================================
 # E.2:
@@ -98,9 +105,9 @@ import numpy as np
 # multiply it by 50.
 # ----------------------------------------------------------------
 
-rand = np.random.randint(0,100,50)
+rand = np.random.randint(0,100,5)*50
 sorted = np.sort(rand)
 
 print(sorted)
-print(sorted[48])
+print(sorted[-2])
 
