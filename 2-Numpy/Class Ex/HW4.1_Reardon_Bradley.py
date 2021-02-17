@@ -268,7 +268,7 @@ print('Tomorrow: ' + str(np.datetime64('today') + np.timedelta64(1, 'D')))
 # Write a NumPy code to find the first Monday in June 2021.
 # ----------------------------------------------------------------
 
-
+print(np.busday_offset('2021-06', 0, roll='forward', weekmask='Mon'))
 
 
 # =================================================================
@@ -277,9 +277,10 @@ print('Tomorrow: ' + str(np.datetime64('today') + np.timedelta64(1, 'D')))
 # a) x2 − 3x + 8.
 # b) x4 − x3 + -x2 + 1x – 2
 # ----------------------------------------------------------------
+from numpy.polynomial import Polynomial as P
+p = P([8, 3, 2])
 
-
-
+p.roots()
 
 
 # =================================================================
@@ -287,8 +288,15 @@ print('Tomorrow: ' + str(np.datetime64('today') + np.timedelta64(1, 'D')))
 # Write a NumPy program to calculate mean across dimension, of matrix.
 # ----------------------------------------------------------------
 
+one_d = np.random.randint(1,10,16)
+two_d = one_d.reshape((4,4))
 
-
+col = two_d.mean(axis = 1)
+row = two_d.mean(axis = 0)
+matrix = two_d.mean()
+print(col)
+print(row)
+print(matrix)
 
 
 
