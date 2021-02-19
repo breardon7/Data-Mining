@@ -11,11 +11,11 @@ import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
 
 hundred = np.random.randint(0,100,200) * 100
-largest = hundred[0]
-smallest = hundred[-1]
+sorted_hund = np.sort(hundred)
+largest = sorted_hund[-1]
+smallest = sorted_hund[0]
 
-
-plt.quiver([smallest, largest], 1, 1)
+print(plt.quiver([smallest, largest], 1, 1))
 
 # =================================================================
 # E.2:
