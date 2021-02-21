@@ -32,17 +32,17 @@ zero_array = np.zeros((3, 3))
 one_array = np.ones((3, 4))
 
 
-def contains_no_zero(x):
+def contains_non_zero(x):
     if np.any(x != 0):
         print('Array contains non-zero values.')
     else:
         print('Array does not contain non-zero values.')
 
 
-contains_no_zero(array_0)
-contains_no_zero(array_no_0)
-contains_no_zero(zero_array)
-contains_no_zero(one_array)
+contains_non_zero(array_0)
+contains_non_zero(array_no_0)
+contains_non_zero(zero_array)
+contains_non_zero(one_array)
 
 
 
@@ -69,7 +69,7 @@ print(np.allclose(y,z))
 
 size = np.array([1, 8, 130, 10990005])
 
-print('Array size: ', size.nbytes)
+print('Array size: ', size.nbytes, 'bytes')
 
 
 
@@ -81,7 +81,7 @@ print('Array size: ', size.nbytes)
 # 10 to 20 and print all values ​​except the first and last.
 # ----------------------------------------------------------------
 
-ten_twenty = np.random.randint(10,21, size=5)
+ten_twenty = np.random.randint(10,21,5)
 print(ten_twenty)
 print(ten_twenty[1:-1])
 
@@ -92,18 +92,12 @@ print(ten_twenty[1:-1])
 # Write a NumPy code to reverse (flip) an array (first element becomes last).
 # ----------------------------------------------------------------
 
-import numpy as np
-
 array_rev = np.array([1, 2, 3, 4])
 
-def rev_array(x):
-    y = []
-    for i in reversed(x - 1):
-        y += [x[i]]
-    return np.array(y)
+reversed = np.flip(array_rev)
 
-
-print(rev_array(array_rev))
+print(array_rev)
+print(reversed)
 
 
 
@@ -113,11 +107,8 @@ print(rev_array(array_rev))
 # Write a NumPy code to create a matrix with 1 on the border and 0 inside.
 # ----------------------------------------------------------------
 
-one_border = np.zeros((4,4))
-one_border[0,:] = 1
-one_border[-1,:] = 1
-one_border[:,0] = 1
-one_border[:,-1] = 1
+zeros = np.zeros((4,4))
+one_border = np.pad(zeros, pad_width = 1, mode = 'constant', constant_values = 1)
 print(one_border)
 
 
@@ -128,11 +119,8 @@ print(one_border)
 # matrix of one.
 # ----------------------------------------------------------------
 
-zero_border = np.ones((4,4))
-zero_border[0,:] = 0
-zero_border[-1,:] = 0
-zero_border[:,0] = 0
-zero_border[:,-1] = 0
+ones = np.ones((3,3))
+zero_border = np.pad(ones, pad_width = 1, mode = 'constant', constant_values = 0)
 print(zero_border)
 
 
@@ -144,7 +132,7 @@ print(zero_border)
 # Write a NumPy code to append values to the end of an array.
 # ----------------------------------------------------------------
 
-x = np.zeros((3,4,5))
+x = np.zeros((2,2))
 y = [1,2,3,4]
 z = np.append(x,y)
 print(z)
@@ -190,7 +178,7 @@ print(repeat_array(10))
 # that are bigger than 6 in a given array.
 # ----------------------------------------------------------------
 
-array6 = np.arange(0,30,5)
+array6 = np.random.randint(1,10,10)
 
 def above_six(x):
     y = []
@@ -235,7 +223,7 @@ print(floor, ceiling, trunc)
 # Singular Value Decomposition.
 # ----------------------------------------------------------------
 
-square = np.random.randint(1, 10, size = 4)
+square = np.random.randint(1, 10, 4)
 sq2 = square.reshape(2,2)
 print(np.linalg.svd(sq2))
 
@@ -278,10 +266,10 @@ print(np.busday_offset('2021-06', 0, roll='forward', weekmask='Mon'))
 # b) x4 − x3 + -x2 + 1x – 2
 # ----------------------------------------------------------------
 from numpy.polynomial import Polynomial as P
-p = P([8, 3, 2])
-
-p.roots()
-
+p1 = P([8, -3, 1])
+p2 = P([-2, 1, -1, -1, 1])
+print(p1.roots())
+print(p2.roots())
 
 # =================================================================
 # Class_Ex20:
