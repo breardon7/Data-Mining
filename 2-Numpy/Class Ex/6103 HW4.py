@@ -12,10 +12,13 @@ plt.style.use('seaborn-whitegrid')
 
 hundred = np.random.randint(0,100,200) * 100
 sorted_hund = np.sort(hundred)
+sum_hund= sum(hundred)
 largest = sorted_hund[-1]
 smallest = sorted_hund[0]
 
-print(plt.quiver([smallest, largest], 1, 1))
+print(sum_hund)
+
+plt.plot()
 
 # =================================================================
 # E.2:
@@ -24,8 +27,20 @@ print(plt.quiver([smallest, largest], 1, 1))
 # size of 0.1. (Put the title x axis label and y axis label for each plot)
 # ----------------------------------------------------------------
 
-
-
+x = np.arange(1,6,0.1)
+y21 = x
+y22 = np.sin(x)
+y23 = np.exp(x)
+y24 = np.log(x)
+plt.plot(x, y21, c = 'b')
+plt.plot(x, y22, c = 'y')
+plt.plot(x, y23, c = 'r')
+plt.plot(x, y24, c = 'g')
+plt.title('Functions of X')
+plt.xlabel('X')
+plt.ylabel('Functions')
+plt.ylim(-10,30)
+plt.show()
 
 
 # =================================================================
