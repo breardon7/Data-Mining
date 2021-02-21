@@ -83,9 +83,14 @@ plt.show()
 # different widths and colors.
 # ----------------------------------------------------------------
 
+x5 = np.linspace(0, 20, 100)
+y51 = x5*3 + 7
+y52 = -x5**2 - 4
 
-
-
+plt.plot(x5, y51, label = 'first', linewidth = .5, color = 'b')
+plt.plot(x5, y52, label = 'second', linewidth = 4, color = 'y')
+plt.legend()
+plt.show()
 
 
 
@@ -95,7 +100,14 @@ plt.show()
 # Write a Python code to plot two or more lines and set the line markers.
 # ----------------------------------------------------------------
 
+x6 = np.linspace(0,10,20)
+y61 = x6**2
+y62 =-x6**3
 
+plt.plot(x6, y61, label = 'o', marker = 'o', color = 'b')
+plt.plot(x6, y62, label = '*', marker = '*', color = 'y')
+plt.legend()
+plt.show()
 
 
 
@@ -108,10 +120,13 @@ plt.show()
 # Customized the grid lines with linestyle -, width .6. and color blue.
 # ----------------------------------------------------------------
 
-
-
-
-
+dates = ['4-11-2017', '4-11-2018']
+y7 = [10394, 34003]
+plt.plot(dates, y7, label = 'Revenue', c = 'r')
+plt.legend()
+plt.grid(True, c = 'b', lw = .6, ls = '-')
+plt.title('Revenue History for Company X')
+plt.show()
 
 
 # =================================================================
@@ -120,7 +135,8 @@ plt.show()
 # (facets)
 # ----------------------------------------------------------------
 
-
+plt.subplots(nrows = 3, ncols=2,)
+plt.show()
 
 
 
