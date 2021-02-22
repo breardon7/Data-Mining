@@ -5,12 +5,12 @@
 # and use it to predict survival rates of passengers.
 # For now, we'll just focus on the visualization of the data with seaborn:
 
-# use seaboran to load dataset
+# use seaborn to load dataset
 # ----------------------------------------------------------------
 import seaborn as sns
 import matplotlib.pyplot as plt
 sns.set_style('whitegrid')
-# titanic = sns.load_dataset('') load titanic
+titanic = sns.load_dataset('titanic.csv')
 # =================================================================
 # Class_Ex2:
 # Join plot on fare and age
