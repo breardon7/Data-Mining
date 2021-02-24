@@ -6,19 +6,22 @@
 # ii. Get the largest number and smallest number with the indexing of it.
 # iii. plot the following vector and check your min and max value that you find in section i.
 # ----------------------------------------------------------------
+print('-'*50+'Q1'+'-'*50)
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
-
-hundred = np.random.randint(0,100,200) * 100
+hundred = np.random.randint(0, 100, 200) * 100
 sorted_hund = np.sort(hundred)
-sum_hund= sum(hundred)
+sum_hund = sum(hundred)
 largest = sorted_hund[-1]
 smallest = sorted_hund[0]
-
-print(sum_hund)
-
-plt.plot()
+vector = [smallest, largest]
+origin = np.array([[0, 0, 0], [0, 0, 0]])
+plt.quiver(*origin, vector[0], vector[1], scale = 1000)
+plt.xlim (-1, 1)
+plt.ylim(-10, 10000)
+print(vector)
+plt.show()
 
 # =================================================================
 # E.2:
@@ -26,7 +29,7 @@ plt.plot()
 # and log(x) over the interval 1 < x < 6 with the step
 # size of 0.1. (Put the title x axis label and y axis label for each plot)
 # ----------------------------------------------------------------
-
+print('-'*50+'Q2'+'-'*50)
 x = np.arange(1,6,0.1)
 y21 = x
 y22 = np.sin(x)
@@ -51,8 +54,11 @@ plt.show()
 # ii. Plot the histogram of x and y, increase the number of bins to get more resulting. Explain what
 # information you get from the histogram(Put the title x axis label and y axis label for each plot)
 # ----------------------------------------------------------------
-
-
+print('-'*50+'Q3'+'-'*50)
+vector_x = np.random.normal(loc = 0, scale = 1, size = 10)
+vector_y = np.random.uniform(low = 0, high = 1)
+print(vector_x)
+print(vector_y)
 
 
 

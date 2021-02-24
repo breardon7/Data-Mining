@@ -9,11 +9,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 x1 = np.linspace(-3,3,100)
 y1 = np.exp(-x1 ** 2)
+def plot_slope(x,y):
+    xs = x[1:] - x[:-1]
+    ys = y[1:] - y[:-1]
+    plt.plot(x[1:], ys/xs)
+plot_slope(x1,y1)
 plt.plot(x1, y1)
 plt.show()
-
 
 # =================================================================
 # Class_Ex2:
@@ -24,18 +29,9 @@ plt.show()
 #  We want to display those N–1 curves.
 # ----------------------------------------------------------------
 
-# rand100 = np.random.randint(1,100,250)
-# reshaped100 = rand100.reshape(25, 10)
-# print(reshaped100)
-
-#x2 = np.linspace(0,6,100)
-#xreshape = x2.reshape(100,1)
-#y2 = np.exp(-x2**2).reshape(100,1)
-#y3 = np.exp(x2**3).reshape(100,1)
-#xplus = np.concatenate(xreshape, y2, y3)
-#plt.plot(x2,y2)
-#plt.plot(x2,y3)
-#plt.show()
+array2 = np.random.randint(0,20,18).reshape(6,3)
+plt.plot(array2[:,0], array2[:,1:])
+plt.show()
 
 
 
