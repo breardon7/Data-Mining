@@ -20,7 +20,6 @@ origin = np.array([[0, 0, 0], [0, 0, 0]])
 plt.quiver(*origin, vector[0], vector[1], scale = 1000)
 plt.xlim (-1, 1)
 plt.ylim(-10, 10000)
-print(vector)
 plt.show()
 
 # =================================================================
@@ -55,13 +54,22 @@ plt.show()
 # information you get from the histogram(Put the title x axis label and y axis label for each plot)
 # ----------------------------------------------------------------
 print('-'*50+'Q3'+'-'*50)
-vector_x = np.random.normal(loc = 0, scale = 1, size = 10)
-vector_y = np.random.uniform(low = 0, high = 1)
-print(vector_x)
-print(vector_y)
-
-
-
+vector_x = np.random.normal(loc = 0, scale = 1, size = 1000)
+vector_y = np.random.uniform(low = 0, high = 1, size = 1000)
+xm = np.mean(vector_x)
+ym = np.mean(vector_y)
+xst = np.std(vector_x)
+yst = np.std(vector_y)
+plt.hist(vector_x, 35)
+plt.xlabel('Normal Distribution')
+plt.ylabel('Freguency')
+plt.title('Frequency of Normally Distributed Values')
+plt.show()
+plt.hist(vector_y, 35)
+plt.xlabel('Uniform Distribution')
+plt.ylabel('Freguency')
+plt.title('Frequency of Uniformly Distributed Values')
+plt.show()
 # =================================================================
 # E.4:
 # A = ([1,2,3,4,5,6,7,8,9]) <--2-Dimensional 3x3
@@ -72,9 +80,16 @@ print(vector_y)
 # iv. Compute the norm of x (Euclidian Norm).
 # v. Swap the first column with the second column and delate the second row.
 # ----------------------------------------------------------------
-
-
-
+print('-'*50+'Q4'+'-'*50)
+A = np.array([1,2,3,4,5,6,7,8,9]).reshape(3,3)
+print(A)
+x4 = A[:,0]
+y4 = A[:,-2:-1]
+s4 = x4+np.sum(A[1,:])
+np.linalg.norm(x4)
+A1 = A[:,[0,1,2]] = A[:,[1,0,2]]
+A1 = A1[[0,2], :]
+print(A1)
 
 
 # =================================================================
@@ -91,9 +106,15 @@ print(vector_y)
 # vi. Compute the mean and standard deviation of first and third row.
 # vii. Sum all the columns and then sum the results.
 # ----------------------------------------------------------------
+print('-'*50+'Q5'+'-'*50)
 
+v5 = np.arange(20,35)**2
+v5s = np.sum(v5)
+x5 = np.array([2,-4,9,-8,-3,2,-1,0,5,4,-3,3]).reshape(3,4)
+abs_x5 = abs(*x5[:,0])
+print(abs_x5)
 
-
+#x5 = np.array([2, −4, 9, −8,−3, 2, −1, 0,5, 4, −3, 3]).reshape(3,3)
 
 
 # =================================================================
@@ -102,7 +123,7 @@ print(vector_y)
 # Languages: Java, Python, PHP, JavaScript, C#, C++
 # Usage (Perecent): 22.2, 17.6, 8.8, 8, 7.7, 6.7
 # ----------------------------------------------------------------
-
+print('-'*50+'Q6'+'-'*50)
 
 
 
@@ -115,7 +136,7 @@ print(vector_y)
 # Average: 0.14, 0.32, 0.47, 0.38
 # STD: 0.23, 0.32, 0.18, 0.46
 # ----------------------------------------------------------------
-
+print('-'*50+'Q7'+'-'*50)
 
 
 
@@ -125,7 +146,7 @@ print(vector_y)
 # Write a script to find the second largest number in an array (use random number generator) and
 # multiply it by 50.
 # ----------------------------------------------------------------
-
+print('-'*50+'Q8'+'-'*50)
 rand = np.random.randint(0,100,5)*50
 sorted = np.sort(rand)
 
