@@ -70,6 +70,9 @@ plt.xlabel('Uniform Distribution')
 plt.ylabel('Freguency')
 plt.title('Frequency of Uniformly Distributed Values')
 plt.show()
+
+# The gaussian histogram shows that x is a normally distributed population.
+# The  uniform histogram shows that y is a uniformly distributed population.
 # =================================================================
 # E.4:
 # A = ([1,2,3,4,5,6,7,8,9]) <--2-Dimensional 3x3
@@ -108,11 +111,18 @@ print(A1)
 # ----------------------------------------------------------------
 print('-'*50+'Q5'+'-'*50)
 
-v5 = np.arange(20,35)**2
-v5s = np.sum(v5)
-x5 = np.array([2,-4,9,-8,-3,2,-1,0,5,4,-3,3]).reshape(3,4)
-abs_x5 = abs(*x5[:,0])
-print(abs_x5)
+sqsum = sum(np.arange(20,35)**2)
+
+x5 = np.array([2, -4, 9, -8, -3, 2, -1, 0, 5, 4, -3, 3]).reshape(3,4)
+x5_abs = abs(x5)
+x5_sq = x5**2
+x5[[0,1]] = x5[[1,0]]
+x5[0] = 0
+x5[2] = 1
+x5_means_rows_1_3 = np.mean(x5[0]), np.mean(x5[2])
+x5_stds_rows_1_3 = np.std(x5[0]), np.std(x5[2])
+x5_col_sums = np.sum(x5, axis=1)
+x5_sum_of_col = np.sum(x5_col_sums)
 
 #x5 = np.array([2, −4, 9, −8,−3, 2, −1, 0,5, 4, −3, 3]).reshape(3,3)
 
@@ -125,6 +135,13 @@ print(abs_x5)
 # ----------------------------------------------------------------
 print('-'*50+'Q6'+'-'*50)
 
+languages = np.array(['Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++'])
+usage = np.array([22.2, 17.6, 8.8, 8, 7.7, 6.7])
+sns.barplot(languages, usage)
+plt.xlabel('Languages')
+plt.ylabel('Percentage of Usage')
+plt.title("Percentage of Language Usage")
+plt.show()
 
 
 
@@ -138,7 +155,13 @@ print('-'*50+'Q6'+'-'*50)
 # ----------------------------------------------------------------
 print('-'*50+'Q7'+'-'*50)
 
-
+average = np.array([0.14, 0.32, 0.47, 0.38])
+groups = np.array([1,2,3,4])
+std = np.array([0.23, 0.32, 0.18, 0.46])
+bar = sns.barplot(x = groups, y = average, yerr = std)
+for i in range(len(average)):
+    bar.text(x = groups[i]-1, y = average[i], s = average[i])
+plt.show()
 
 
 # =================================================================
@@ -147,9 +170,9 @@ print('-'*50+'Q7'+'-'*50)
 # multiply it by 50.
 # ----------------------------------------------------------------
 print('-'*50+'Q8'+'-'*50)
-rand = np.random.randint(0,100,5)*50
-sorted = np.sort(rand)
 
+rand = np.random.randint(0, 100, 5)
+sorted = np.sort(rand)
 print(sorted)
-print(sorted[-2])
+print(sorted[-2] * 50)
 
