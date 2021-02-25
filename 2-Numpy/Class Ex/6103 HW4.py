@@ -7,20 +7,23 @@
 # iii. plot the following vector and check your min and max value that you find in section i.
 # ----------------------------------------------------------------
 print('-'*50+'Q1'+'-'*50)
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-whitegrid')
-hundred = np.random.randint(0, 100, 200) * 100
+hundred = np.random.randint(50, 100, 200) * 100
+hr = hundred.reshape(100,2)
 sorted_hund = np.sort(hundred)
 sum_hund = sum(hundred)
 largest = sorted_hund[-1]
 smallest = sorted_hund[0]
-vector = [smallest, largest]
-origin = np.array([[0, 0, 0], [0, 0, 0]])
-plt.quiver(*origin, vector[0], vector[1], scale = 1000)
-plt.xlim (-1, 1)
-plt.ylim(-10, 10000)
+v = np.array([smallest, largest])
+origin = np.array([[0, 0], [0, 0]])
+plt.quiver(*origin, v[0], v[1], scale = 1)
+plt.xlim (-10, v[0]+1)
+plt.ylim(-10, v[1]+1)
 plt.show()
+
 
 # =================================================================
 # E.2:
