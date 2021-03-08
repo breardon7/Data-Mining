@@ -75,17 +75,14 @@ print('#',50*"-")
 #  missing data with NaN values:
 # ----------------------------------------------------------------
 
-id_range = np.arange(baseball['id'].min(), baseball['id'].max())
-
-bball_all_id = baseball
-bball_all_id['id'] = id_range
-print('#',50*"-")
+new_index = np.arange(baseball_reindexed.index[0], baseball_reindexed.index[-1])
+baseball_seq = baseball_reindexed.reindex(new_index)
 
 # =================================================================
 # Class_Ex9:
 # Fill the missing values
 # ----------------------------------------------------------------
-
+baseball_seq.fillna('blank')
 
 print('#',50*"-")
 
@@ -93,7 +90,7 @@ print('#',50*"-")
 # Class_Ex10:
 # Find the shape of the new df
 # ----------------------------------------------------------------
-
+baseball_seq.shape
 
 print('#',50*"-")
 
@@ -101,7 +98,7 @@ print('#',50*"-")
 # Class_Ex11:
 # Drop row 89525 and 89526
 # ----------------------------------------------------------------
-
+baseball_seq.drop(labels = [89525, 89526], axis = 0)
 print('#',50*"-")
 
 
@@ -109,6 +106,7 @@ print('#',50*"-")
 # Class_Ex12:
 # Sor the df ascending and not ascending
 # ----------------------------------------------------------------
-
+baseball_seq.sort_values(by = 'player')
+baseball_seq.sort_values(by = 'player', ascending = False)
 print('#',50*"-")
 
