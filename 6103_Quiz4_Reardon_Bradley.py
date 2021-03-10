@@ -63,7 +63,7 @@ plt.show()
 
 correlation_matrix = np.corrcoef(age, salary)
 correlation_xy = correlation_matrix[0,1]
-print('correlation:', correlation_xy)
+print('correlation coefficient:', correlation_xy)
 
 # Our correlation coefficient value of 0.21 shows that there is very little correlation between Age and Salary.
 

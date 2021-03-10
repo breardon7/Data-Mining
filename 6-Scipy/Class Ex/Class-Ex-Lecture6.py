@@ -6,11 +6,19 @@
 # Plot the grey scale image of the racoon by using matplotlib
 # ----------------------------------------------------------------
 from scipy import misc
-face = misc.face() ## Modify the face function
+import matplotlib.pyplot as plt
+import numpy as np
 
+def rgb2gray(rgb):
+    return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140])
 
+face = misc.face()
+grayface = rgb2gray(face)
+plt.plot(grayface)
+plt.show()
 
-
+print(grayface)
+print(face)
 
 
 
