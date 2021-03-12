@@ -6,19 +6,13 @@
 # Plot the grey scale image of the racoon by using matplotlib
 # ----------------------------------------------------------------
 from scipy import misc
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
-def rgb2gray(rgb):
-    return np.dot(rgb[...,:3], [0.2989, 0.5870, 0.1140])
-
-face = misc.face()
-grayface = rgb2gray(face)
-plt.plot(grayface)
+face = misc.face(gray=True)  ## Modify the face function
+print(face.shape)
+plt.imshow(face)
 plt.show()
-
-print(grayface)
-print(face)
 
 
 
@@ -30,13 +24,9 @@ print('#',50*"-")
 # gray
 # ----------------------------------------------------------------
 
-
-
-
-
-
-
-
+plt.gray()
+plt.imshow(face)
+plt.show()
 
 
 print('#',50*"-")
@@ -46,12 +36,13 @@ print('#',50*"-")
 # Plot the crop image again.
 # ----------------------------------------------------------------
 
-
-
-
-
-
-
+face1 = face
+face1[0:200] = 255
+face1[600:800] = 255
+face1[:,:201] = 255
+face1[:,800:] = 255
+plt.imshow(face1)
+plt.show()
 
 print('#',50*"-")
 # =================================================================
@@ -59,9 +50,13 @@ print('#',50*"-")
 # Take the racoon face out and mask everything with black color.
 # ----------------------------------------------------------------
 
-
-
-
+face3 = misc.face(gray=True)
+face3[175:325, 400:925] = 0
+face3[325:375, 500:900] = 0
+face3[375:425, 555:830] = 0
+face3[425:475, 555:715] = 0
+plt.imshow(face3)
+plt.show()
 
 
 print('#',50*"-")
@@ -72,13 +67,11 @@ print('#',50*"-")
 # Create any matrix A and B (Size matters)
 # ----------------------------------------------------------------
 
-
-
-
-
-
-
-
+from scipy import linalg
+import numpy as np
+a5 = np.random.randint(1, 25, 25).reshape(5, 5)
+b5 = np.random.randint(1, 10, 5).reshape(5, 1)
+print(linalg.solve(a5, b5))
 
 print('#',50*"-")
 # =================================================================
@@ -87,13 +80,8 @@ print('#',50*"-")
 # results.)
 # ----------------------------------------------------------------
 
-
-
-
-
-
-
-
+a6 = np.random.randint(1, 25, 25).reshape(5, 5)
+print(linalg.eig(a6))
 
 print('#',50*"-")
 # =================================================================
