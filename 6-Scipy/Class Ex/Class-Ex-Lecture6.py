@@ -91,11 +91,19 @@ print('#',50*"-")
 # Convert sparse matrix to dense and vice versa
 # ----------------------------------------------------------------
 
+from scipy.sparse import csc_matrix
 
+r = np.array([3,0,2,0,0,1,0])
+c = np.array([1,2,0,0,0,2,1])
+data = np.array([5,6,7,8,9,7,2])
 
+sparse = csc_matrix((data, (r,c)))
+dense = sparse.todense()
+sparse2 = csc_matrix(dense)
 
-
-
+print(sparse)
+print(dense)
+print(sparse2)
 
 
 
@@ -107,14 +115,10 @@ print('#',50*"-")
 # then use scipy to minimize the function (use Scipy)
 # ----------------------------------------------------------------
 
-
-
-
-
-
-
-
-
+from scipy import optimize
+poly = np.poly1d([2,4,1])
+mini_pol = optimize.minimize(poly,3)
+print(mini_pol)
 
 
 print('#',50*"-")
