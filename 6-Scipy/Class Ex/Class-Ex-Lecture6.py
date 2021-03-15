@@ -159,12 +159,19 @@ print('#',50*"-")
 # interpolate between each data points. Use different interpolations.
 # plot the results (use Scipy)
 # ----------------------------------------------------------------
+from scipy.interpolate import interp1d
 
+x = np.linspace(0, 10, num = 12)
+x1 = np.linspace(0,10, num = 23)
+y = np.sin(x**2)
+y1 = np.sin(x1**2)
 
+f = interp1d(x, y)
+f1 = interp1d(x1, y1)
 
-
-
-
+plt.plot(x, f(x), x1, f1(x1), '--')
+plt.legend(['f', 'f2'], loc='best')
+plt.show()
 
 
 
