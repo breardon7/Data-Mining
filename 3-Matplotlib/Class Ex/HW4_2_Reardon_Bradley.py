@@ -41,7 +41,7 @@ plt.show()
 # a bar chart plot.
 # Use the following data.
 # ----------------------------------------------------------------
-data = np.random.rand(5,3)
+data = v(5,3)
 color_list = ['b', 'g', 'r', 'k', 'y']
 x = np.arange(3)
 bottom = np.cumsum(data, axis=0)

@@ -183,8 +183,17 @@ print('#',50*"-")
 # PDF, CDF (CUMsum), Mean, Std, Histogram
 # ----------------------------------------------------------------
 
+from scipy.stats import norm
+from scipy import stats
 
+a12 = np.random.randint(10,50,25)
 
+norm.pdf(a12)
+norm.cdf(a12)
+
+norm.mean(a12)
+norm.std(a12)
+stats.rv_histogram(np.histogram(norm.rvs(a12)))
 
 
 
@@ -193,10 +202,14 @@ print('#',50*"-")
 print('#',50*"-")
 # =================================================================
 # Class_Ex13:
-# USe hypothesise testing  if two datasets of (independent) random varibales
+# USe hypothesise testing  if two datasets of (independent) random variables
 # comes from the same distribution (use Scipy)
 # Calculate p values.
 # ----------------------------------------------------------------
+
+rvs1 = norm.rvs(size=100)
+rvs2 = norm.rvs(size=150)
+print(stats.ks_2samp(rvs1, rvs2))
 
 
 

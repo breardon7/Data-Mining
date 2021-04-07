@@ -50,14 +50,15 @@ plt.show()
 # ---------------------------------------------------------------------------------------------------------------------
 print(20* "-" + "Q4" + 20* "-")
 
-green = orig[:,:,1]
 
-for i in green:
-    if i < .255:
-        i = 0
 
-print(orig)
-plt.imshow(orig)
+for i in range(512):
+    for j in range(512):
+        if grey[i,j] > .3:
+            grey[i,j] = 1
+
+print(grey)
+plt.imshow(grey, cmap = 'gray')
 plt.show()
 
 
@@ -65,3 +66,12 @@ plt.show()
 # %% 5- Keep the background and try color the cameraman by white colors.
 # ---------------------------------------------------------------------------------------------------------------------
 print(20* "-" + "Q5" + 20* "-")
+
+for i in range(512):
+    for j in range(512):
+        if grey[i,j] < .7:
+            grey[i,j] = 0
+
+print(grey)
+plt.imshow(grey, cmap = 'gray_r')
+plt.show()
