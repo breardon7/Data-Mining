@@ -112,7 +112,7 @@ import webbrowser
 tennis = pd.read_csv('tennis.csv')
 X = tennis_ex.values[:,:4]
 y = tennis_ex.values[:,4]
-clf = tree.DecisionTreeClassifier(random_state=11)
+clf = tree.DecisionTreeClassifier(criterion = 'entropy', random_state=11)
 clf = clf.fit(X, y)
 
 dot_data = tree.export_graphviz(clf,
@@ -138,8 +138,7 @@ for edge in edges:
 graph.write_png('tennis.png')
 graph.write_svg('tennis.svg')
 
-
-#X_test, X_train, y_test, y_train = train_test_split(X, y, test_size=0.2, random_state=100)
+# The best feature is humidity.
 
 
 
