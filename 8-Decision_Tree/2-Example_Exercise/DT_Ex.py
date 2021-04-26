@@ -31,7 +31,7 @@ data.columns = ['Variance', 'Skewness', 'Curtosis', 'Entropy', 'Class']
 #   Curtosis of Wavelet Transformed image - Numeric (Curtosis)
 #   Entropy of image - Numeric (Entropy)
 
-# The targets are the classes which are: Genuine (Class = 0), Forged (Class = 1)
+# The target is the Class feature: Genuine (Class = 0), Forged (Class = 1)
 
 
 #%%-----------------------------------------------------------------------
