@@ -12,6 +12,8 @@ from sklearn.svm import SVC
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.cluster import KMeans
 
 from sklearn.feature_selection import SelectFromModel
 from sklearn.metrics import accuracy_score, roc_curve, roc_auc_score
@@ -255,8 +257,8 @@ logit_clf.fit(X_train, y_train)
 
 
 # Logistic Regression Predictions
-knn_pred = knn_clf.predict(X_test_std)
-knn_score = knn_clf.predict_proba(X_test)
+logit_pred = knn_clf.predict(X_test_std)
+logit_score = knn_clf.predict_proba(X_test)
 
 # Logistic Regression Results
 print("\n")
@@ -267,6 +269,35 @@ print(classification_report(y_test,logit_pred))
 print("\n")
 
 print("Accuracy : ", accuracy_score(y_test, logit_pred) * 100)
+
+# %%-----------------------------------------------------------------------
+# Naive Bayes model
+nb_clf = GaussianNB()
+nb_clf.fit(X_train, y_train)
+
+
+# Logistic Regression Predictions
+nb_pred = knn_clf.predict(X_test_std)
+nb_score = knn_clf.predict_proba(X_test)
+
+# Logistic Regression Results
+print("\n")
+print("Results Using KNN & All Features: \n")
+
+print("Classification Report: ")
+print(classification_report(y_test,nb_pred))
+print("\n")
+
+print("Accuracy : ", accuracy_score(y_test, nb_pred) * 100)
+
+# %%-----------------------------------------------------------------------
+# K-means model
+
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(df)
+
+labels = kmeans.predict(df)
+centroids = kmeans.cluster_centers_
 
 #%%-----------------------------------------------------------------------
 # Correlation Matrix
